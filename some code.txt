@@ -1,0 +1,39 @@
+using System;
+
+namespace Garage
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int width = 2 * n + 2;
+            int height = n + 2;
+            
+
+            Console.WriteLine(new string('|', width));
+            Console.WriteLine(new string('+', width));
+            Console.WriteLine($"{new string('|', (width - 6) / 2)}GARAGE{new string('|', (width - 6) / 2)}");
+
+            if (height - 3 > 2)
+            {
+                int heightInMiddle = height - 6;
+                int widthSideOfDoor = (width - 8) / 2;
+
+                for (int row = 0; row < heightInMiddle; row++)
+                {
+                    Console.WriteLine(new string('|', width));
+                }
+
+                Console.WriteLine($"|{new string('/', widthSideOfDoor)}|    |{new string('\\', widthSideOfDoor)}|");
+                Console.WriteLine($"|{new string('/', widthSideOfDoor)}|    |{new string('\\', widthSideOfDoor)}|");
+
+                Console.WriteLine($"{new string(' ', (width - 5) / 2)}/////{new string(' ', (width - 5) / 2)}");
+            }
+            else
+            {
+                int heightInMiddle = height - 5;
+            }
+        }
+    }
+}
